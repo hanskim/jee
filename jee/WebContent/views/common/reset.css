@@ -1,0 +1,107 @@
+@CHARSET "UTF-8";
+/* Reset */
+html, body {
+    width: 100%;    /* 100% 화면 꽉 채우는 거 , 웹 표준 정책에 따른 */
+    height: 100%    /* (효과는 모니터든 스마트폰이든 무관) */
+}
+ 
+html {
+    overflow-y: scroll;      /* 스크롤을 내리면 스크롤바가 생성  */
+    font-size: 10px         /*   오버플로우 yes 면 생성(y) */
+}
+ 
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, form, fieldset, p,
+    button {
+    margin: 0;             /*  상속을 주기 위해 초기값으로 설정해놈 */
+    padding: 0              /* 따라서 default는 프레임키 붙어있는 상태 */
+}
+/* 위와 같은 걸 그룹핑이라고 함 */
+/* 태그 = 인스턴스 */
+ 
+body, h1, h2, h3, h4, input, button {
+    font-family: Dotum, '돋움', Helvetica, AppleSDGothicNeo, sans-serif;
+    font-size: 12px;
+    color: #383d41
+    /* font-family 는 앞에서는 1순위로 적용된다.  폰트 없으면 결국sans-serif */
+}
+ 
+body {
+    background-color: #fff;
+    text-align: center;              /*글자들 정렬은 기본은 center 정렬*/
+    *word-break: break-all;         /*  */
+    -ms-word-break: break-all
+}
+ 
+img, fieldset, iframe {
+    border: 0 none          /* 디폴트는 간격없이 0으로 설정 , 하나일 때는 구분자 없어도 됨*/
+}
+ 
+li {
+    list-style: none
+}
+ 
+input, select, button {
+    vertical-align: middle     /*세로 정렬 시 가운데 위치 */
+}
+ 
+img {
+    vertical-align: top       /* 이미지는 맨 위에서 부터 */
+}
+ 
+i, em, address {
+    font-style: normal         /* 폰트를 굵게(강조) 표시 (emphasis) */
+}
+ 
+label, button {
+    cursor: pointer      /* 손가락 모양이 보이게 하는 것 */
+}
+ 
+button {
+    margin: 0;           
+    padding: 0
+}
+ 
+a {
+    color: #222;              /*  a는 하이퍼링크 의미  , decorate =밑줄을 그리지 마라 */
+    text-decoration: none
+}
+  
+a:hover {
+    color: #390;              /* hover( 커서 대면 색 변하는 text) 이벤트에는 밑줄이 생겼다 안 생겼다 하게 하라 */
+    text-decoration: underline
+}
+ 
+button * {
+    position: relative       /* 상대위치 */
+}
+ 
+button img {
+    left: -3px;
+    *left: auto
+}
+ 
+html:first-child select {
+    height: 20px;
+    padding-right: 6px
+}
+ 
+option {
+    padding-right: 6px
+}
+ 
+hr {
+    display: none        /* 수평선(horizon) 밑줄 없다 */
+}
+ 
+legend {
+    *width: 0
+}
+ 
+table {
+    border-collapse: collapse;   /*   데이블 셀 간격을 주지마라 */
+    border-spacing: 0
+}
+ 
+input::-ms-clear {
+    display: none
+}

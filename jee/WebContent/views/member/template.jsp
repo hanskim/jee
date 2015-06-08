@@ -1,23 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<style >
+@IMPORT url("template.css");
+</style>
+
+<!-- style 이 다 이런 방식이고 java 클래스 속성 정의 한 것과 유사 -->
+<!-- css를 클래스化 시킬 수 있다. -->
+
+
 </head>
 <body>
-	<table
-		style="border: 2px solid black; border-collapse: collapse; width: 500px; height: 200px;">
-		<tr style="border: 2px solid black; height: 50px;">
-			<td
-				style="border: 2px solid black; text-align: center; background-color: #B2CCFF; color: black; width: 150px;">
-				필드</td>
-			<td
-				style="border: 2px solid black; text-align: center; background-color: #B2CCFF; color: black; width: 150px;">입력값</td>
+	<table class="tableClass">
 
+		<tr class="trClass">
+			<td class="tdClassTitle">필드</td>
+			<td class ="tdClass">입력값</td>
 		</tr>
-		<tr style="border: 2px solid black; height: 50 px;">
+		<tr class="trClass">
 			<td style="border: 2px solid black; text-align: center;">사용자 이름</td>
 			<td style="border: 2px solid black; text-align: center;"><input
 				type="text" style="width: 350px"></td>

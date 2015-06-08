@@ -1,0 +1,8 @@
+@CHARSET "UTF-8";
+
+.tableClass {
+	border: 2px solid black;
+	border-collapse: collapse;
+	width: 500px;
+	height: 200px;
+}

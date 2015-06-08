@@ -1,0 +1,28 @@
+@CHARSET "UTF-8";
+@IMPORT url("common.css");   /* 좌측 콘텐츠가 있는 프레임 */
+article{
+	
+	width:  70% ;
+	min-height:50% ;
+	position: relative;
+	z-index: 10 ; 
+	margin: -50px 0 ; 
+	background: Green ; 
+	float: left ;  
+	
+}
+
+.leftContent{
+	padding-top : 50px ;     /* 부모의 태그 -50과 상쇄시키기 위해 => 웹 상에서 딱 맞게 결합된다. */
+}
+
+/* 우측 사이드 */
+aside{
+	width:  30% ;
+	min-height:50% ;
+	position: relative;
+	z-index: 10 ; 
+	margin: -50px 0 ; 
+	background: RED ; 
+	float: right ;   /* float 는 떠있다 = 우측정렬 시키라는 뜻 */
+}

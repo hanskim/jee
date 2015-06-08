@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+
+@IMPORT url("Father.css");  /* 해당 css 파일 상속 */
+
+.trClass {
+	border: 2px solid black;
+	height: 50px;
+}
+
+.tdClassTitle {
+	border: 2px solid black;
+	text-align: center;
+	background-color: #B2CCFF;
+	color: #80ff80;
+	width: 150px;
+}
+
+.tdClass {
+	border: 2px solid black;
+	text-align: center;
+	background-color: #FF0000;
+	color: black;
+	width: 150px;
+}
+
