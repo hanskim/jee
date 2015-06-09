@@ -1,0 +1,51 @@
+@CHARSET "UTF-8";
+/*  @IMPORT url("common.css");  */
+@IMPORT url("../common/common.css"");
+
+
+
+/* jsp는절대경로( html은 상대경로로 접근  */
+
+
+/* ./ 한개폴더
+../한개 상위 폴더
+../../ 두개 상위 폴더
+../../../ 세게 상위 폴더 */
+
+ body{
+	font-family: "맑은 고딕"" ; 
+    font-size: 0.75em ;
+    color : #333 ; 
+    line-height: 1.8em;	
+} 
+
+
+ul.multi{           /*   .multi라고 주는 것과 의미상 동일하지만 가독성과 유지보수 차원에서 */
+ margin: 0 ;        /*     이러한 방식으로 명명함. */
+ padding: 0 ;       /*   부모 스타일에 있는데도 0으로 주는 것을 "초기화" 한다.!! */
+}
+
+ul.multi li{
+	margin: 0;
+	padding: 0 0 0 15px ;
+	list-style: none ;   /*  세로로 출력되는 것을 none 시킨다 */
+	background-position: left center;
+	background-color: red;
+}
+
+ul.multi ul li{
+	list-style: decimal;
+	margin: 0 0 0 5px;
+	padding: 0 ;
+
+	background-color: green;
+	background-image: none;
+	}
+ul.multi ul ul li{
+	margin: 0 0 0 -20px ;
+	padding: 0 0 0 15px;
+	list-style: none ;  /* 리스트스타일을 none으로 지정하여 리스트타입이 상속됨을 막음  */
+	background-image: url("../../images/bluePoint.png");
+	background-repeat: no-repeat ;
+	background-color: yellow;
+}

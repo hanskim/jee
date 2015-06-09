@@ -1,0 +1,20 @@
+@CHARSET "UTF-8";
+
+.tableTag{
+	width: 500px;
+	height: 700px;
+	
+}
+.tableTag thead tr th{
+	border:  1px solid gray;
+	height: 50px;
+	
+}
+.tableTag tbody tr td{
+	border: 1px solid gray;
+}
+
+table {
+    border-collapse: collapse;   /*   데이블 셀 간격을 주지마라 */
+    border-spacing: 0
+}

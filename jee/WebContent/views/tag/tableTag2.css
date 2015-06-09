@@ -1,0 +1,36 @@
+@CHARSET "UTF-8";
+
+body{
+	font-family: "돋움";
+	font-size: 0.75em;
+	color: #333 ; 
+	
+	
+}
+
+table{
+	text-align: center;
+	border-collapse: collapse;
+	border-top: 2px solid #333 ;
+	border-bottom: 1px solid #333;
+	width: 100% 
+}
+
+table th, td{
+	margin: 0;
+	padding: 8px;
+}
+table th{
+	background-color: #999;
+	color:  #ff0080;
+	border-bottom-width: 2px ;
+	border-bottom-style: solid;
+	border-bottom-color: #000;
+	font-size: 1.1em	
+}
+
+table td{
+	border-bottom-width: 1px ;
+	border-bottom-style: dotted;
+	border-bottom-color: #666;
+}

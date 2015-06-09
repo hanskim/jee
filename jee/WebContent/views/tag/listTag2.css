@@ -1,0 +1,7 @@
+@CHARSET "UTF-8";
+/* @IMPORT url("../common/common.css");   */
+/* ../의 위치는 views폴더를 가르킨다 */
+.listTag{
+	width: 300px;
+	border : 1px solid black;
+}

@@ -1,0 +1,44 @@
+@CHARSET "UTF-8";
+@IMPORT url("common.css");
+
+/* 좌측사이드바 */
+
+aside{
+	
+	width:  30% ;
+	min-height:50% ;
+	position: relative;
+	z-index: 10 ; 
+	margin: -50px 0 ; 
+	background-color: Green ; 
+	float: left ;  
+	
+}
+.leftSide{
+ padding-top: 50px ; 
+}
+
+.topMenu{
+	float: right ; 
+	width:  40% ; 
+	height:  200px ; 
+}
+
+/* 우측사이드바 */
+
+article{
+	
+	width:  70% ;
+	min-height:50% ;
+	position: relative;
+	z-index: 10 ; 
+	margin: -50px 0 ; 
+	background-color: orange; ; 
+	float: right ;  
+	
+}
+
+.rightContent{
+	 padding-top: 50px ; 
+	
+}
