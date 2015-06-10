@@ -90,7 +90,7 @@ option {
 }
  
 hr {
-    display: none        /* 수평선(horizon) 밑줄 없다 */
+   /*  display: none        수평선(horizon) 밑줄 없다 */
 }
  
 legend {

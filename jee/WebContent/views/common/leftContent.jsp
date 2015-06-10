@@ -3,6 +3,7 @@
 	
 <!doctype html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8" />
 <title>Document</title>
@@ -10,6 +11,7 @@
 @IMPORT url("leftContent.css");
 </style>
 </head>
+
 <body>
 	<header>
 		<h3>헤 더</h3>
