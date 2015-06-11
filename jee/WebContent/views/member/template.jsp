@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 
 <style >
-@IMPORT url("template.css");
+@IMPORT url("<%=request.getContextPath()%>/css/template.css");
 </style>
 
 <!-- style 이 다 이런 방식이고 java 클래스 속성 정의 한 것과 유사 -->

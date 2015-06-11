@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<jsp:forward page="views/member/template.jsp"/>
+<jsp:forward page="./model1/onlyContent.jsp" />
 
 </body>
 </html>
