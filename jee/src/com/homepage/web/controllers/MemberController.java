@@ -21,17 +21,43 @@ import com.homepage.web.service.MemberServiceImpl;
  * @ Author  : hanskim
  * @ Story  :  회원가입과 로그인 담당 콘트롤러
  */
-@WebServlet({"/model2/join.do", "/model2/login.do"})
+@WebServlet({"/model2/join.do", "/model2/login.do","/member/searchIDForm.do","/member/searchPassForm.do"})
 public class MemberController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	Map<String,Object> map = new HashMap<String,Object>();
+    MemberBean bean = new MemberBean( );
+    MemberService service = new MemberServiceImpl( );
+
+    
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		String path = request.getServletPath();
+		
+		switch (path) {
+		
+		case "/member/searchIDForm.do" :
+			RequestDispatcher dispatcher3 =request.getRequestDispatcher("views/model2/loginFail.jsp");
+			dispatcher3.forward(request, response);
+			break;
+	
+	    case "/member/searchPassForm.do" : 
+	    	RequestDispatcher dispatcher4 =request.getRequestDispatcher("views/model2/searchPassForm.jsp");
+	    	dispatcher4.forward(request, response);
+	    	break;
+
+		default:
+			break;
+		}
+	}
+	
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
-		
-		Map<String,Object> map = new HashMap<String,Object>();
-	    MemberBean bean = new MemberBean( );
-	    MemberService service = new MemberServiceImpl( );
-	    
+
 	    String path = request.getServletPath();
 	    
 	    switch (path) {
@@ -65,10 +91,21 @@ public class MemberController extends HttpServlet {
 			String pass2 = request.getParameter("password");
 			String msg = service.login(id2, pass2);
 			
-			System.out.println("test1");
+			System.out.println("컨트롤러 조건문 전까지 옴"+msg);
 			
-			if (msg.equalsIgnoreCase("환영합니다.")) {
-				System.out.println("로그인 성공시 : "+bean.getId());
+			if (msg.equalsIgnoreCase("일치하는 아이디 없음.")) {
+				request.setAttribute("msg",msg);
+				RequestDispatcher dispatcher2 = request.getRequestDispatcher("/views/model2/Loginfail.jsp");   
+				dispatcher2.forward(request,response);
+				break;
+			}else if(msg.equalsIgnoreCase("비번 오류")){
+				request.setAttribute("msg",msg);
+				RequestDispatcher dispatcher2 = request.getRequestDispatcher("/views/model2/Loginfail.jsp");   
+				dispatcher2.forward(request,response);
+				break;
+		
+			}else{
+				System.out.println("이게 보이면 로그인 성공된거임: "+ bean.getId());
 				request.setAttribute("id", bean.getId());
 				request.setAttribute("password", bean.getPassword());
 				request.setAttribute("name", bean.getName());
@@ -76,20 +113,8 @@ public class MemberController extends HttpServlet {
 				request.setAttribute("address", bean.getAddr());
 				RequestDispatcher dispatcher2 = request.getRequestDispatcher("/views/model2/Member.jsp");   
 				dispatcher2.forward(request,response);
-			}else{
-				request.setAttribute("msg",msg);
-				RequestDispatcher dispatcher2 = request.getRequestDispatcher("/views/model2/Loginfail.jsp");   
-				dispatcher2.forward(request,response);
-				
 			}
-			
-			break;
-	
-		}
-
-		
 	}
 
-
-
+}
 }

@@ -82,10 +82,12 @@ if(request.getAttribute("seat")==null){
 </div>
 
 
+
+
 <div>
 <form action="<%=request.getContextPath()%>/reservation/checkOut.do">
 		<fieldset>
-			<legend>주문취소</legend>
+			<legend>취소내용</legend>
 			<ol>
 				<li>
 				<label for="prod">취소할 좌석</label>

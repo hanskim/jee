@@ -21,19 +21,12 @@ subString()같은 메소드를 활용하면 쉽게 얻을 수 있읅 것이다.
 		// TODO Auto-generated method stub
 		String msg="";  
 	            try {
-	 
-	            	               
-	 
 	                if (seat[floor - 1][row - 1] != null) { // 이미 이름이 있다면(예약중)
 	                  msg = "그방은 이미 예약중입니다.";
-	            
 	                }else{
 	                    // 이름이 없다면 checkIn 시킨다.
-	                    System.out.print("고객님 이름? ");
-	                    
-	                   
+	                    System.out.print("고객님 이름? " +id);
 	                    seat[floor - 1][row- 1] = id;
-	 
 	                   msg =id + "님 checkIn 완료 되셨습니다";
 	                    
 	 

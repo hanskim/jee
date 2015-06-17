@@ -11,6 +11,22 @@
     	
     	</style>
     	<script type="text/javascript">
+    	
+    	function searchID(){
+    		window.open("<%= request.getContextPath()%>/member/searchIDForm.do", 
+    				"searchID" ,
+    		"scrollbars,toolbar=no, location=no, directories=no,status=no, menubar=yes, width=600,top=200,left=400 ");
+    		/* 해당 줄바꿈 하면 에러남... 반드시 한 줄로 처리 */
+    	}
+    	
+    	function searchPass() {
+    		window.open("<%= request.getContextPath()%>/member/searchPassForm.do", 
+    				"searchPass" ,
+    		"scrollbars,toolbar=no,location=no,directories=no,status=no, menubar=yes, width=600,top=200,left=400 ");
+    		/* 해당 줄바꿈 하면 에러남... 반드시 한 줄로 처리 */
+    	}
+    	
+    	
     	function login() {
 			document.frmLogin.submit();
     	}
@@ -97,6 +113,17 @@
     	</table>
     </fieldset>
  </form>
+ <div>
+ 
+ <span>
+<a href="#" onclick="searchID()">아이디찾기</a>
+</span>
+
+<span>
+<a href="#" onclick="searchPass()">비번찾기</a>
+</span>	
+	
+ </div>
     
     </body>
     </html>

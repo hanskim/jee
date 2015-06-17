@@ -34,10 +34,10 @@ public class MemberServiceImpl implements MemberService{
 	public String login(String id, String password) {
 
 		String msg = "" ; 
-		System.out.println("tbebsbtb"+id);
+		System.out.println("login메소드까지 왔음"+id);
 		
 		System.out.println("id"+map.get("id"));
-		if(!map.containsValue("id")||map.get("id").equals(id)){
+		if(!map.containsValue("id")&&map.get("id").equals(id)){
 			msg = "일치하는 아이디 없음.";
 		}else {
 			if(!(map.get("password").equals(password))){
