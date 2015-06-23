@@ -1,0 +1,43 @@
+member bean
+
+name ;  // 회원 이름
+id ;    // 회원아이디
+pass ;  //회원 패스워드
+age  ;   // 회원나이
+cellPhone ;  // 회원 핸드폰 번호
+telNo ;  // 회원 핸드폰 번호
+gender ;   // 회원성별	
+email ;    // 회원이메일
+// 이상 회원가입 <I> 필요 변수
+ * 
+memo ;     // 회원 탈퇴, 가입 메세지 입력
+이상 메세지 보내기 <I> 필요 변수
+
+rank ;     // 회원 등급코드
+rankName ;     // 회원 등급명
+// 이상 게시판 후기 필요한 변수 ( + memberId+ memberPasswordl)
+
+
+admin bean
+
+authority ;     //관리자 권한 id
+regiDate ;   // 관리자 권한 등록일
+// 이상 관리자 회원관리 <I> 에 필요한 변수
+
+Client Bean
+
+merit ;   // 회원의 우대사항 (ex. 장애인, 군인, 제휴업체 직원)
+
+
+
+
+
+
+
+Address Bean
+
+addresscode    //신규 추가할 것...   pk
+memberZipcode  ;   // 회원 우편번호   
+memberCity ;   //회원 시도
+memberVilleage  ;   //  회원동
+addressDetail ;   //상세주소

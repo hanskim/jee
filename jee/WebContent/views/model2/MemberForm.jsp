@@ -10,33 +10,10 @@
     	@IMPORT url("../../css/model2/Kaup.css");
     	
     	</style>
-    	<script type="text/javascript">
-    	
-    	function searchID(){
-    		window.open("<%= request.getContextPath()%>/member/searchIDForm.do", 
-    				"searchID" ,
-    		"scrollbars,toolbar=no, location=no, directories=no,status=no, menubar=yes, width=600,top=200,left=400 ");
-    		/* 해당 줄바꿈 하면 에러남... 반드시 한 줄로 처리 */
-    	}
-    	
-    	function searchPass() {
-    		window.open("<%= request.getContextPath()%>/member/searchPassForm.do", 
-    				"searchPass" ,
-    		"scrollbars,toolbar=no,location=no,directories=no,status=no, menubar=yes, width=600,top=200,left=400 ");
-    		/* 해당 줄바꿈 하면 에러남... 반드시 한 줄로 처리 */
-    	}
-    	
-    	
-    	function login() {
-			document.frmLogin.submit();
-    	}
-    	
-		function join() {
-			document.frmJoin.submit();	
-			}
-
-  
+    	<script type="text/javascript src="<%=request.getContextPath()%>/js/member.js %>>
     	</script>
+    	
+
  	
     </head>
     <body>
@@ -57,11 +34,13 @@
     		<input type="text" id="id" name="id" placeholder="아이디를 입력하세요" />
     		</td>
     		
+    		<tr>
     		<td>패스워드</td>
     		<td>
     		<input type="password" id="password" name="password" />
     		</td>
     		</tr>
+    		
     		<tr>
     		<td>나이</td>
     		<td>
@@ -116,11 +95,11 @@
  <div>
  
  <span>
-<a href="#" onclick="searchID()">아이디찾기</a>
+<a href="#" onclick=searchID('<%= request.getContextPath()%>/member/searchIDForm.do'>아이디찾기</a>
 </span>
 
 <span>
-<a href="#" onclick="searchPass()">비번찾기</a>
+<a href="#" onclick=searchPass('<%= request.getContextPath()%>/member/searchPassForm.do'>비번찾기</a>
 </span>	
 	
  </div>
