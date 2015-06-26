@@ -166,15 +166,127 @@ desc member2;
 ALTER TABLE PLAYER
 rename column member to memberID ;
 
+-- 직원 아이디가 101인 직원 검색 --
+select * from EMPLOYEES 
+where employee_id=101;
 
 
+-- 직원 아이디가 101인 직원 이름만 검색 --
+select first_name  || last_name full_name  
+-- || 컬럼 결함  ,  full_name 컬럼명 생성
+from EMPLOYEES 
+where employee_id=101;
+
+    -- 성과 이름을 띄워쓰기 (기타 복수 검색 조건 주기) --
+
+    select first_name || ''||last_name 이름,
+    salary 월급 ,
+    department_id 부서번호
+    from EMPLOYEES 
+    where department_id =30 and salary <10000;
+    
+    
+    -- 구매부 직원 중 입사일 2006년 이전
+   -- 급여 10000 달러 이하 검색 --
+   select first_name || ''||last_name 이름,
+   salary 월급 ,
+   department_id 부서번호,
+   hire_date 입사일
+   from EMPLOYEES 
+   where department_id =30 and salary <10000 and hire_date <'06/01/01';
+   
+   
+   --구매부이거나  전산부인 직원  검색 -- 
+   select first_name || ''||last_name 이름,
+   salary 월급 ,
+   department_id 부서번호
+   from EMPLOYEES 
+   where department_id =30 or department_id=60;
+   
+   
+   -- 구매부이면서 만불이하의 직원이거나 전산부이면서 5000불 이상인 직원 합집합 --
+      select first_name || ''||last_name 이름,
+   salary 월급 ,
+   department_id 부서번호
+   from EMPLOYEES
+  where department_id =30 and salary <10000
+  or department_id =60 and salary >5000;
+   
+   
+ -- [범위 조건 ] 직원 id가 110 이상 120 이하 --
+   select employee_id 사원번호 , first_name || ''||last_name 이름,
+   salary 월급 , department_id 부서번호
+   from EMPLOYEES
+   where employee_id between 110 and 120 ;
+   
+ -- [범위 조건 ] 직원 id가 110 이상 120 이하가 아닌 직원들 --  
+   select employee_id 사원번호 , first_name || ''||last_name 이름,
+   salary 월급 , department_id 부서번호
+   from EMPLOYEES
+   where employee_id  not between 110 and 120 ;
+   
+    -- 2005년 1월 1일부터 2009년 12월  31일까지 입사한 직원 --  
+   select employee_id 사원번호 , first_name || ''||last_name 이름,
+   salary 월급 , department_id 부서번호
+   from EMPLOYEES
+   where hire_date between '05/01/01' and '09/12/31' ; 
+   
+   -- 구매부이거나 전산부이거나 총무부인 직원들 검색 --
+   -- in 조건절로 묶기
+   select employee_id 사원번호 , first_name || ' '||last_name 이름,
+   salary 월급 , department_id 부서번호
+   from EMPLOYEES 
+   where DEPARTMENT_ID in(30,60,90);
+   
+   --서브쿼리, 부서번호가 30,60,90 어디에도 속하지 않는 직원 검색 --
+   select employee_id 사원번호 , first_name || ' '||last_name 이름,
+   salary 월급 , department_id 부서번호
+   from EMPLOYEES 
+   where DEPARTMENT_ID not in(
+   select department_id
+   from EMPLOYEES 
+   where department_id in(30,60,90)
+   );
+   
+-- 위 서브쿼쿼리는 아래와 같은 결과  --
+select employee_id 사원번호 , first_name || ' '||last_name 이름,
+salary 월급 , department_id 부서번호
+from EMPLOYEES 
+where DEPARTMENT_ID not in(30,60,90);
+
+-- like 문법 .. 국번이 515번인 직원 검색 --
+
+select employee_id 사원번호 , first_name || ' '||last_name 이름,
+salary 월급 , department_id 부서번호, phone_number 전화번호
+from EMPLOYEES 
+where phone_number like '515%';
+   
+  
+--전화번호 중간번호가 123인 직원 검색 -- 
+select employee_id 사원번호 , first_name || ' '||last_name 이름,
+salary 월급 , department_id 부서번호, phone_number 전화번호
+from EMPLOYEES 
+where phone_number like '%123%';
 
 
+--도(state)가 null이 아닌 지역 검색  1 --
+select location_id 지역ID, street_address 도로명, city 도시, state_province 주
+from LOCATIONS 
+where state_province like '%';
+
+--도(state)가 null이 아닌 지역 검색  1 --
+select location_id 지역ID, street_address 도로명, city 도시, state_province 주
+from LOCATIONS 
+where state_province is not null;
 
 
+--도(state)가 null이 포함된 전체  지역 검색 -- 
+select location_id 지역ID, street_address 도로명, city 도시, state_province 주
+from LOCATIONS ;
 
-
-
-
+--도(state)가 null 지역역 검색 -- 
+select location_id 지역ID, street_address 도로명, city 도시, state_province 주
+from LOCATIONS
+where state_province is null;
 
 
